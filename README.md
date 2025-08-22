@@ -2,7 +2,7 @@
 
 A comprehensive example showcasing **Material Design 3 Web Components** with **Vite** and **Lit**, featuring dynamic theming, interactive components, and helpful setup resources.
 
-[See live demo]('https://material-design.netlify.app/').
+[See live demo](https://material-design.netlify.app/).
 
 ## ✨ Features
 
