@@ -164,15 +164,6 @@ export class MyComponent extends LitElement {
 }
 ```
 
-## 🤝 Contributing
-
-This is an example project, but contributions are welcome! Feel free to:
-
-- Report issues or bugs
-- Suggest new component examples
-- Improve documentation
-- Add new Material Web component demonstrations
-
 ## 📄 License
 
 This project is open source and available under the [MIT License](LICENSE).
@@ -186,4 +177,4 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ---
 
-**Built with ❤️ using Material Design 3, Lit, and Vite**
+**Built with 💜 using Material Design 3, Lit, and Vite**

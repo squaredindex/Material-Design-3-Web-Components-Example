@@ -209,6 +209,10 @@ header p {
   margin: 0;
 }
 
+.github-link {
+  margin-top: 24px;
+}
+
 .component-section {
   margin-bottom: 48px;
   padding: 24px;
