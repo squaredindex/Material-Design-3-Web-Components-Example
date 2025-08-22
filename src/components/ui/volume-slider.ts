@@ -1,6 +1,6 @@
-import { LitElement, html, css, unsafeCSS } from 'lit';
+import { LitElement, html, css } from 'lit';
 import { customElement, state } from 'lit/decorators.js';
-import tailwindStyles from '../../styles/global.css?inline';
+import { sharedTailwindStyles } from '../../styles/shared-tailwind.js';
 
 @customElement('volume-slider')
 export class VolumeSlider extends LitElement {
@@ -8,12 +8,11 @@ export class VolumeSlider extends LitElement {
   private volume: number = 69;
 
   static styles = [
-    unsafeCSS(tailwindStyles),
+    sharedTailwindStyles,
     css`
       :host {
         display: block;
       }
-      /* Your component-specific styles */
     `
   ];
 
@@ -41,8 +40,8 @@ export class VolumeSlider extends LitElement {
 
   render() {
     return html`
-      <div class="volume-control flex flex-col">
-        <label class="volume-label text-sm font-bold ml-4">Volume: ${this.volume}%</label>
+      <div class="flex flex-col">
+        <label class="text-sm font-bold ml-4 text-on-surface">Volume: ${this.volume}%</label>
         <md-slider 
           value="${this.volume}" 
           min="0" 
