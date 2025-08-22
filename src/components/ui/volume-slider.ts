@@ -1,28 +1,21 @@
-import { LitElement, html, css } from 'lit';
+import { LitElement, html, css, unsafeCSS } from 'lit';
 import { customElement, state } from 'lit/decorators.js';
+import tailwindStyles from '../../styles/global.css?inline';
 
 @customElement('volume-slider')
 export class VolumeSlider extends LitElement {
   @state()
   private volume: number = 69;
 
-  static styles = css`
-    :host {
-      display: block;
-    }
-
-    .volume-control {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .volume-label {
-      font-size: 0.875rem;
-      font-weight: bold;
-      color: var(--md-sys-color-on-surface);
-      margin-left: 1rem;
-    }
-  `;
+  static styles = [
+    unsafeCSS(tailwindStyles),
+    css`
+      :host {
+        display: block;
+      }
+      /* Your component-specific styles */
+    `
+  ];
 
   connectedCallback() {
     super.connectedCallback();
@@ -48,8 +41,8 @@ export class VolumeSlider extends LitElement {
 
   render() {
     return html`
-      <div class="volume-control">
-        <label class="volume-label">Volume: ${this.volume}%</label>
+      <div class="volume-control flex flex-col">
+        <label class="volume-label text-sm font-bold ml-4">Volume: ${this.volume}%</label>
         <md-slider 
           value="${this.volume}" 
           min="0" 
