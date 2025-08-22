@@ -2,6 +2,8 @@
 
 A comprehensive example showcasing **Material Design 3 Web Components** with **Vite** and **Lit**, featuring dynamic theming, interactive components, and helpful setup resources.
 
+[See live demo]('https://material-design.netlify.app/').
+
 ## ✨ Features
 
 - **🎨 Dynamic Theme Switching**: Light, dark, and system modes with Material Design 3 color tokens
