@@ -1,7 +1,6 @@
 import { LitElement, html, css } from 'lit';
 import { customElement, state } from 'lit/decorators.js';
-
-export type ThemeMode = 'light' | 'dark' | 'system';
+import type { ThemeMode } from '../../types/index.js';
 
 @customElement('theme-controller')
 export class ThemeController extends LitElement {
@@ -11,6 +10,12 @@ export class ThemeController extends LitElement {
   static styles = css`
     :host {
       display: contents;
+    }
+
+    .control-group {
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
     }
   `;
 
