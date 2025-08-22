@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + Lit + TS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+    <link rel="stylesheet" href="./src/index.css" />
+    <script type="module" src="/src/my-element.ts"></script>
+    <script type="module" src="/src/theme-controller.ts"></script>
+    <script type="module" src="/src/volume-slider.ts"></script>
+    <script type="module">
+      import '@material/web/checkbox/checkbox.js';
+      import '@material/web/radio/radio.js';
+      import '@material/web/textfield/outlined-text-field.js';
+      import '@material/web/textfield/filled-text-field.js';
+      import '@material/web/button/outlined-button.js';
+      import '@material/web/button/filled-button.js';
+      import '@material/web/button/text-button.js';
+      import '@material/web/fab/fab.js';
+      import '@material/web/switch/switch.js';
+      import '@material/web/chips/chip-set.js';
+      import '@material/web/chips/assist-chip.js';
+      import '@material/web/chips/filter-chip.js';
+      import '@material/web/select/outlined-select.js';
+      import '@material/web/select/select-option.js';
+      import '@material/web/slider/slider.js';
+      import '@material/web/progress/linear-progress.js';
+      import '@material/web/labs/card/outlined-card.js';
+      import '@material/web/icon/icon.js';
+      import {styles as typescaleStyles} from '@material/web/typography/md-typescale-styles.js';
+  
+      document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
+    </script>
+  </head>
+  <body>
+    <div class="app-container">
+      <header>
+        <h1 class="md-typescale-display-small">Material Design 3 Components</h1>
+        <p class="md-typescale-body-large">hihi Calical...here's a little demo of the components.</p>
+        <md-icon style="color: var(--md-sys-color-primary); --md-icon-size: 100px;">heart_smile</md-icon>
+      </header>
+
+      <main>
+        <!-- Buttons Section -->
+        <section class="component-section">
+          <h2 class="md-typescale-headline-medium">Buttons</h2>
+          <div class="component-group">
+            <md-filled-button>
+              <md-icon slot="icon">settings</md-icon>
+              Filled Button
+            </md-filled-button>
+            <md-outlined-button>
+              <md-icon slot="icon">favorite</md-icon>
+              Outlined Button
+            </md-outlined-button>
+            <md-text-button>
+              <md-icon slot="icon">share</md-icon>
+              Text Button
+            </md-text-button>
+            <md-fab>
+              <md-icon slot="icon">add</md-icon>
+            </md-fab>
+          </div>
+        </section>
+
+        <!-- Form Controls Section -->
+        <section class="component-section">
+          <h2 class="md-typescale-headline-medium">Form Controls</h2>
+          <div class="form-grid">
+            <div class="form-column">
+              <md-filled-text-field label="First Name" placeholder="Enter your first name"></md-filled-text-field>
+              <md-outlined-text-field label="Last Name" placeholder="Enter your last name"></md-outlined-text-field>
+              
+              <md-outlined-select label="Country">
+                <md-select-option value="us">United States</md-select-option>
+                <md-select-option value="ca">Canada</md-select-option>
+                <md-select-option value="uk">United Kingdom</md-select-option>
+                <md-select-option value="de">Germany</md-select-option>
+              </md-outlined-select>
+            </div>
+
+            <div class="form-column">
+              <div class="control-group">
+                <label class="md-typescale-label-large">Preferences</label>
+                <div class="checkbox-group">
+                  <md-checkbox checked></md-checkbox>
+                  <span class="md-typescale-body-medium">Email notifications</span>
+                </div>
+                <div class="checkbox-group">
+                  <md-checkbox></md-checkbox>
+                  <span class="md-typescale-body-medium">SMS notifications</span>
+                </div>
+              </div>
+
+              <theme-controller></theme-controller>
+            </div>
+          </div>
+        </section>
+
+        <!-- Interactive Controls Section -->
+        <section class="component-section">
+          <h2 class="md-typescale-headline-medium">Interactive Controls</h2>
+          <div class="component-group">
+            <div class="control-group">
+              <label class="md-typescale-label-large">Enable notifications</label>
+              <md-switch checked></md-switch>
+            </div>
+            
+            <volume-slider></volume-slider>
+
+            <div class="control-group">
+              <label class="md-typescale-label-large">Loading progress</label>
+              <md-linear-progress value="0.6"></md-linear-progress>
+            </div>
+          </div>
+        </section>
+
+        <!-- Chips Section -->
+        <section class="component-section">
+          <h2 class="md-typescale-headline-medium">Chips</h2>
+          <md-chip-set>
+            <md-assist-chip label="JavaScript"></md-assist-chip>
+            <md-assist-chip label="TypeScript"></md-assist-chip>
+            <md-assist-chip label="Material Design"></md-assist-chip>
+          </md-chip-set>
+          
+          <md-chip-set>
+            <md-filter-chip label="Frontend" selected></md-filter-chip>
+            <md-filter-chip label="Backend"></md-filter-chip>
+            <md-filter-chip label="Mobile" selected></md-filter-chip>
+            <md-filter-chip label="Design"></md-filter-chip>
+          </md-chip-set>
+        </section>
+
+        <!-- Resources Section -->
+        <section class="component-section">
+          <h2 class="md-typescale-headline-medium">Setup Resources</h2>
+          <div class="cards-grid">
+            <md-outlined-card class="demo-card">
+              <div class="card-content">
+                <h3 class="md-typescale-headline-small">Material Web</h3>
+                <p class="md-typescale-body-medium">Get started with Material Web components and follow the official quick-start guide for implementation.</p>
+                <div class="card-actions">
+                  <md-text-button onclick="window.open('https://material-web.dev/about/intro/', '_blank')">
+                    <md-icon slot="icon">info</md-icon>
+                    Introduction
+                  </md-text-button>
+                  <md-filled-button onclick="window.open('https://github.com/material-components/material-web/blob/main/docs/quick-start.md', '_blank')">
+                    <md-icon slot="icon">rocket_launch</md-icon>
+                    Quick Start
+                  </md-filled-button>
+                </div>
+              </div>
+            </md-outlined-card>
+
+            <md-outlined-card class="demo-card">
+              <div class="card-content">
+                <h3 class="md-typescale-headline-small">Material Icons</h3>
+                <p class="md-typescale-body-medium">Browse and search thousands of Material Design icons for your web applications.</p>
+                <div class="card-actions">
+                  <md-filled-button onclick="window.open('https://fonts.google.com/icons', '_blank')">
+                    <md-icon slot="icon">palette</md-icon>
+                    Browse Icons
+                  </md-filled-button>
+                </div>
+              </div>
+            </md-outlined-card>
+
+            <md-outlined-card class="demo-card">
+              <div class="card-content">
+                <h3 class="md-typescale-headline-small">Google Fonts</h3>
+                <p class="md-typescale-body-medium">Access Roboto and other Google Fonts used in Material Design typography systems.</p>
+                <div class="card-actions">
+                  <md-text-button onclick="window.open('https://fonts.google.com/specimen/Roboto', '_blank')">
+                    <md-icon slot="icon">text_fields</md-icon>
+                    Roboto Font
+                  </md-text-button>
+                  <md-outlined-button onclick="window.open('https://fonts.google.com/', '_blank')">
+                    <md-icon slot="icon">font_download</md-icon>
+                    All Fonts
+                  </md-outlined-button>
+                </div>
+              </div>
+            </md-outlined-card>
+
+            <md-outlined-card class="demo-card">
+              <div class="card-content">
+                <h3 class="md-typescale-headline-small">Vite + Lit Setup</h3>
+                <p class="md-typescale-body-medium">Learn how to integrate Material Web components with Vite and Lit for modern web development.</p>
+                <div class="card-actions">
+                  <md-text-button onclick="window.open('https://lit.dev/docs/', '_blank')">
+                    <md-icon slot="icon">description</md-icon>
+                    Lit Docs
+                  </md-text-button>
+                  <md-outlined-button onclick="window.open('https://vite.dev/', '_blank')">
+                    <md-icon slot="icon">build</md-icon>
+                    Vite Guide
+                  </md-outlined-button>
+                </div>
+              </div>
+            </md-outlined-card>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
