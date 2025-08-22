@@ -37,6 +37,9 @@ export class AppHeader extends LitElement {
     }
 
     .hoverable-name {
+      display: inline-block;
+      padding: 1rem;
+      margin: -1rem;
       cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>💜</text></svg>") 16 0, auto;
       transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     }

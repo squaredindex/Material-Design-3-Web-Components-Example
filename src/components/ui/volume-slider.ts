@@ -4,7 +4,7 @@ import { customElement, state } from 'lit/decorators.js';
 @customElement('volume-slider')
 export class VolumeSlider extends LitElement {
   @state()
-  private volume: number = 75;
+  private volume: number = 69;
 
   static styles = css`
     :host {
@@ -26,9 +26,9 @@ export class VolumeSlider extends LitElement {
 
   connectedCallback() {
     super.connectedCallback();
-    // Initialize volume from localStorage or default to 75
+    // Initialize volume from localStorage or default to 69
     const savedVolume = localStorage.getItem('volume');
-    this.volume = savedVolume ? parseInt(savedVolume) : 75;
+    this.volume = savedVolume ? parseInt(savedVolume) : 69;
   }
 
   private handleVolumeChange(event: Event) {
