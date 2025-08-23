@@ -1,10 +1,8 @@
 import { LitElement, html, css } from 'lit';
-import { customElement, state } from 'lit/decorators.js';
+import { customElement } from 'lit/decorators.js';
 
 @customElement('app-header')
 export class AppHeader extends LitElement {
-  @state()
-
   static styles = css`
     :host {
       display: block;
