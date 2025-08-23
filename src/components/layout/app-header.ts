@@ -32,6 +32,11 @@ export class AppHeader extends LitElement {
     .github-link {
       margin-top: 24px;
     }
+
+    a {
+      color: var(--md-sys-color-primary);
+      font-weight: 600;
+    }
   `;
 
   private _openGitHub() {
@@ -43,6 +48,9 @@ export class AppHeader extends LitElement {
       <header>
         <h1 class="md-typescale-display-small">Material Design 3 Components</h1>
         <p class="md-typescale-body-large">A little demo of the Material Design 3 web components.</p>
+        <p class="md-typescale-body-large">
+          Web components are no longer actively maintained by Google. For web using <a title="Angular Material" href="https://material.angular.dev/">Angular Material</a> is recommended.
+        </p>
         
         <div class="github-link">
           <md-outlined-button @click=${this._openGitHub}>
